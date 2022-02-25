@@ -2,9 +2,11 @@
 Implementations of various algorithms using Java with explanations.
 
 ## Sorting
-`src.com.jc.Sorting`
+`src.com.jc.Sorting` 
 + Bubble Sort
 + Insertion Sort
++ Merge Sort
+All support ascending/descending flag
 
 
 ## Math

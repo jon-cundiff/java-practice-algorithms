@@ -14,7 +14,7 @@ public class Main {
         return sampNum == 1 ? sampleArray : bubble2;
     }
 
-    public static void main(String[] args) {
+    public static void showSorting() {
         Sorting sort = new Sorting();
 
         System.out.println("Bubble Sort");
@@ -38,6 +38,21 @@ public class Main {
         printArr(insertion2);
         sort.insertionSort(insertion2, false);
         printArr(insertion2);
+    }
 
+    public static void showMath() {
+        MathAlgo math = new MathAlgo();
+
+        int[] numsToTest = {-1, 2, 3, 5, 4, 21417, 21419, 124882, 260091049, 260091077};
+
+        for (int num: numsToTest) {
+            String isPrimeText = math.isPrime(num) ? "Prime" : "Not Prime";
+            System.out.printf("%s : %s\n", num, isPrimeText);
+        }
+    }
+
+    public static void main(String[] args) {
+        showSorting();
+        showMath();
     }
 }

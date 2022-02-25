@@ -19,15 +19,25 @@ public class Main {
 
         System.out.println("Bubble Sort");
         var bubble1 = cloneSample(1);
-        System.out.println(Arrays.toString(bubble1));
+        printArr(bubble1);
         sort.bubbleSort(bubble1, true);
-        System.out.println(Arrays.toString(bubble1));
+        printArr(bubble1);
 
         var bubble2 = cloneSample(2);
-        System.out.println(Arrays.toString(bubble2));
+        printArr(bubble2);
         sort.bubbleSort(bubble2, false);
-        System.out.println(Arrays.toString(bubble2));
+        printArr(bubble2);
 
-        System.out.println("\nSelection Sort");
+        System.out.println("\nInsertion Sort");
+        var insertion1 = cloneSample(1);
+        printArr(insertion1);
+        sort.insertionSort(insertion1, true);
+        printArr(insertion1);
+
+        var insertion2 = cloneSample(2);
+        printArr(insertion2);
+        sort.insertionSort(insertion2, false);
+        printArr(insertion2);
+
     }
 }

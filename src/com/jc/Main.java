@@ -28,27 +28,38 @@ public class Main {
 //        sort.bubbleSort(bubble2, false);
 //        printArr(bubble2);
 //
-//        System.out.println("\nInsertion Sort");
-//        var insertion1 = cloneSample(1);
-//        printArr(insertion1);
-//        sort.insertionSort(insertion1, true);
-//        printArr(insertion1);
+        System.out.println("\nInsertion Sort");
+        var insertion1 = cloneSample(1);
+        printArr(insertion1);
+        sort.insertionSort(insertion1, true);
+        printArr(insertion1);
+
+        var insertion2 = cloneSample(2);
+        printArr(insertion2);
+        sort.insertionSort(insertion2, false);
+        printArr(insertion2);
+
+//        System.out.println("\nMerge Sort");
+//        var merge1 = cloneSample(1);
+//        printArr(merge1);
+//        sort.mergeSort(merge1, 0, merge1.length - 1, true);
+//        printArr(merge1);
 //
-//        var insertion2 = cloneSample(2);
-//        printArr(insertion2);
-//        sort.insertionSort(insertion2, false);
-//        printArr(insertion2);
+//        var merge2 = cloneSample(2);
+//        printArr(merge2);
+//        sort.mergeSort(merge2, 0, merge2.length - 1, false);
+//        printArr(merge2);
 
-        System.out.println("\nMerge Sort");
-        var merge1 = cloneSample(1);
-        printArr(merge1);
-        sort.mergeSort(merge1, 0, merge1.length - 1, true);
-        printArr(merge1);
+        System.out.println("\nQuick Sort");
+        var quick1 = cloneSample(1);
+        printArr(quick1);
+        sort.quickSort(quick1, 0, quick1.length - 1, true);
+        printArr(quick1);
 
-        var merge2 = cloneSample(2);
-        printArr(merge2);
-        sort.mergeSort(merge2, 0, merge2.length - 1, false);
-        printArr(merge2);
+        var quick2 = cloneSample(2);
+        printArr(quick2);
+        sort.quickSort(quick2, 0, quick2.length - 1, false);
+        printArr(quick2);
     }
 
     public static void showMath() {

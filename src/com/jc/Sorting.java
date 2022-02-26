@@ -11,6 +11,12 @@ public class Sorting {
         return isAscending ? val1 < val2 : val1 > val2;
     }
 
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     // Method - Simple Exchanging
     public void bubbleSort(int[] arr, boolean isAscending) {
         // Time Complexity = N loops * N loops = O(N^2)
@@ -22,9 +28,7 @@ public class Sorting {
             // Each iteration of i moves largest to the end
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (shouldSwap(arr[j], arr[j + 1], isAscending)) {
-                    int temp = arr[j + 1] ;
-                    arr[j + 1]  = arr[j];
-                    arr[j] = temp;
+                    swap(arr, j, j + 1);
                     swapped = true;
                 }
             }
@@ -40,12 +44,10 @@ public class Sorting {
             if (shouldSwap(arr[i-1], arr[i], isAscending)){
                 // push left until correct position in sorted portion
                 for (int j = i; j > 0; j--) {
-                    if (!isFirst(arr[j-1], arr[j], isAscending)) {
+                    if (!shouldSwap(arr[j-1], arr[j], isAscending)) {
                         break;
                     }
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
+                    swap(arr, j, j-1);
                 }
             }
         }
@@ -110,6 +112,40 @@ public class Sorting {
 
             // combine arrays together while sorting
             merge(arr, left, middle, right, isAscending);
+        }
+    }
+
+    private int partition(int[] arr, int low, int high, boolean isAscending) {
+        // make the value of the last index the comparison
+        int pivot = arr[high];
+        int pivotIndex = low - 1;
+
+        for (int j = low; j <= high; j++) {
+            // if value at index j is lower (or higher for descending)
+            // than pivot, advance pivot index then swap
+            if (isFirst(arr[j], pivot, isAscending)) {
+                pivotIndex++;
+                swap(arr, pivotIndex, j);
+            }
+        }
+
+        // values smaller than pivot have indices at or below index.
+        // place the pivot value at one above this point
+        pivotIndex++;
+        swap(arr, pivotIndex, high);
+
+        return pivotIndex;
+    }
+
+    // Method - Divide and Conquer Partitions
+    public void quickSort(int[] arr, int low, int high, boolean isAscending) {
+        if ( low < high) {
+            // this index will have the element in the proper place
+            int partitionIndex = partition(arr, low, high, isAscending);
+
+            // repeat this process on the two arrays created before and after the pivot
+            quickSort(arr, low, partitionIndex - 1, isAscending);
+            quickSort(arr, partitionIndex + 1, high, isAscending);
         }
     }
 }

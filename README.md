@@ -14,6 +14,7 @@ Implementations of various algorithms using Java with explanations.
 ## Searching
 `src.com.jc.Searching`
 + Linear Search
++ Binary Search
 
 ## Math
 `src.com.jc.MathAlgo`

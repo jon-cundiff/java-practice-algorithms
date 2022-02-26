@@ -82,6 +82,13 @@ public class Main {
 
         int linearIndex2 = search.linearSearch(linear, 15);
         System.out.println(linearIndex2);
+
+        int[] binary = {1, 4, 6, 7, 9, 11, 20, 22, 25, 28, 31, 35, 38, 40, 42, 43, 47, 60, 80};
+        int binaryIndex1 = search.binarySearch(binary, 31);
+        System.out.println(binaryIndex1);
+
+        int binaryIndex2 = search.binarySearch(binary, 71);
+        System.out.println(binaryIndex2);
     }
 
     public static void main(String[] args) {

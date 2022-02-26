@@ -1,6 +1,36 @@
 package com.jc;
 
 public class MathAlgo {
+    // requires non-negative number
+    public double squareRoot(double num, int precision) {
+        /*
+            Babylonian Method
+            1. make initial guess
+            2. get the average of the guess and the result of num / guess
+            3. if the difference of the average squared and num
+                is in an acceptable range, this is the square root
+            4. Otherwise, the average becomes the next guess
+         */
+
+        double guess = 1;
+        double tolerance = 1;
+        // move decimal left for each level of precision
+        for (int i = 0; i < precision; i++) {
+            tolerance /= 10;
+        }
+
+        do {
+            double average = ((num / guess) + guess)/ 2;
+            if (average * average - num < tolerance) {
+                // Math.round rounds to integer, so dividing by tolerance shifts
+                // decimal to right for the round, then multiplying moves it back
+                return Math.round(average / tolerance) * tolerance;
+            } else {
+                guess = average;
+            }
+        } while (true);
+    }
+
     public boolean isPrime(int num) {
         // Initial primes that will fail the next test
         if (num == 2 || num == 3) {

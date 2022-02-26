@@ -9,7 +9,7 @@ public class Main {
 
     public static int[] cloneSample(int sampNum) {
         int[] sampleArray = {5, 23, 12, 1, 43, -5, 3 ,0, 54, 5};
-        int[] bubble2 = {-8, 11, 5, 23, 12, 1, 43, -5, 3 ,0, 54, 43, 3, -1};
+        int[] bubble2 = {-8, 11, 5, 23, 12, 1, 43, -5, 3 ,0, 54, 45, 3, -1};
 
         return sampNum == 1 ? sampleArray : bubble2;
     }
@@ -73,8 +73,20 @@ public class Main {
         }
     }
 
+    public static void showSearch() {
+        Searching search = new Searching();
+
+        int[] linear = cloneSample(1);
+        int linearIndex1 = search.linearSearch(linear, 43);
+        System.out.println(linearIndex1);
+
+        int linearIndex2 = search.linearSearch(linear, 15);
+        System.out.println(linearIndex2);
+    }
+
     public static void main(String[] args) {
-        showSorting();
+//        showSorting();
 //        showMath();
+        showSearch();
     }
 }

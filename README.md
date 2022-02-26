@@ -11,6 +11,10 @@ Implementations of various algorithms using Java with explanations.
 + Quick Sort
 
 
+## Searching
+`src.com.jc.Searching`
++ Linear Search
+
 ## Math
 `src.com.jc.MathAlgo`
 + Prime Number Test

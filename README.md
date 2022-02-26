@@ -8,6 +8,7 @@ Implementations of various algorithms using Java with explanations.
 + Bubble Sort
 + Insertion Sort
 + Merge Sort
++ Quick Sort
 
 
 ## Math
